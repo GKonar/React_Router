@@ -1,9 +1,19 @@
+import React , { Component } from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom'
+
+import Dog from './Dog';
+import Dogs from './Dogs';
+import Navbar from './Navbar';
+
 import './App.css';
 
 import hazel from './img/hazel.jpeg';
 import scooby from './img/scooby.jpeg';
 import tubby from './img/tubby.jpeg';
 import whiskey from './img/whiskey.jpeg';
+
+
+class App extends Component {
     static defaultProps = {
     dogs: [
       {
@@ -47,6 +57,18 @@ import whiskey from './img/whiskey.jpeg';
         ]
       }
     ]
+  }
+  render() {
+    return (
+      <div className="App">
+        <Navbar dogs={this.props.dogs}/>
+        <Switch>
+          <Route exact path="/dogs/:name" render={(routeProps) => <Dog {...routeProps} dogs={this.props.dogs}/>}/>
+          <Route exact path="/dogs" render={() => <Dogs dogs={this.props.dogs}/> }/>
+          <Redirect to="/dogs" />
+        </Switch>
+      </div>
+    );
   }
 }
 
