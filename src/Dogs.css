@@ -1,0 +1,5 @@
+.Dogs img {
+  width: 80%;
+  height: 400px;
+  object-fit: cover;
+}
