@@ -1,14 +1,12 @@
 import React , { Component } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom'
 
-import Dog from './Dog';
-import Dogs from './Dogs';
 import Navbar from './Navbar';
+import Routes from './Routes';
 
 import './App.css';
 
 import hazel from './img/hazel.jpeg';
-import scooby from './img/scooby.jpeg';
+// import scooby from './img/scooby.jpeg';
 import tubby from './img/tubby.jpeg';
 import whiskey from './img/whiskey.jpeg';
 
@@ -61,13 +59,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <Navbar dogs={this.props.dogs}/>
-      <h1 className="display-1">Dog App!</h1>
-        <Switch>
-          <Route exact path="/dogs/:name" render={(routeProps) => <Dog {...routeProps} dogs={this.props.dogs}/>}/>
-          <Route exact path="/dogs" render={() => <Dogs dogs={this.props.dogs}/> }/>
-          <Redirect to="/dogs" />
-        </Switch>
+      <Navbar dogs={this.props.dogs} />
+      <Routes dogs={this.props.dogs} />
       </div>
     );
   }
