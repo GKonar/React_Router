@@ -44,16 +44,16 @@ class App extends Component {
           "Tubby loves eating food."
         ]
       },
-      {
-        name: "Scooby",
-        age: 4,
-        src: scooby,
-        facts: [
-          "Scooby is not the brightest dog",
-          "Scooby does not like walks or exercise.",
-          "Scooby loves eating food."
-        ]
-      }
+      // {
+      //   name: "Scooby",
+      //   age: 4,
+      //   src: scooby,
+      //   facts: [
+      //     "Scooby is not the brightest dog",
+      //     "Scooby does not like walks or exercise.",
+      //     "Scooby loves eating food."
+      //   ]
+      // }
     ]
   }
   render() {
